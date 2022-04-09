@@ -15,7 +15,7 @@ router.post('/projects', async (req, res, next) => {
 router.get('/projects', async (req, res, next) => {
   try{
     const projects = await findAll();
-    return res.status(200).json(projects);
+    return res.status(200).send({ projects });
   } catch (err) {
     console.error(err);
   }
